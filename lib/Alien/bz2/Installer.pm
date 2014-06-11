@@ -4,7 +4,7 @@ use strict;
 use warnings;
 
 # ABSTRACT: Installer for bz2
-our $VERSION = '0.01'; # VERSION
+our $VERSION = '0.02'; # VERSION
 
 sub _catfile {
   my $path = File::Spec->catfile(@_);
@@ -69,6 +69,7 @@ sub build_requires
   {
     $prereqs{'Archive::Zip'} = 0;
     $prereqs{'Alien::o2dll'} = 0;
+    $prereqs{'Alien::MSYS'}  = 0;
   }
   else
   {
@@ -407,7 +408,7 @@ Alien::bz2::Installer - Installer for bz2
 
 =head1 VERSION
 
-version 0.01
+version 0.02
 
 =head1 SYNOPSIS
 
