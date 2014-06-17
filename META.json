@@ -31,7 +31,7 @@
       },
       "test" : {
          "requires" : {
-            "Test::More" : "0"
+            "Test::More" : "0.94"
          }
       }
    },
@@ -47,6 +47,6 @@
          "web" : "https://github.com/plicease/Alien-bz2-Installer"
       }
    },
-   "version" : "0.02"
+   "version" : "0.03"
 }
 

@@ -4,7 +4,7 @@ use strict;
 use warnings;
 
 # ABSTRACT: Installer for bz2
-our $VERSION = '0.02'; # VERSION
+our $VERSION = '0.03'; # VERSION
 
 sub _catfile {
   my $path = File::Spec->catfile(@_);
@@ -189,11 +189,11 @@ sub build_install
         system 'make', 'all';
         die "make all failed" if $?;
         system 'make', 'install', "PREFIX=$prefix";
-        $DB::single = 1;
         die "make install failed" if $?;
       });
       mkdir(_catdir($prefix, 'dll'));
       File::Copy::copy('bzip2.dll', _catfile($prefix, 'dll', 'bzip2.dll'));
+      File::Copy::copy('libbz2.dll.a', _catfile($prefix, 'dll', 'libbz2.dll.a'));
     }
     else
     {
@@ -408,7 +408,7 @@ Alien::bz2::Installer - Installer for bz2
 
 =head1 VERSION
 
-version 0.02
+version 0.03
 
 =head1 SYNOPSIS
 
