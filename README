@@ -4,7 +4,7 @@ NAME
 
 VERSION
 
-    version 0.03
+    version 0.04
 
 SYNOPSIS
 
@@ -255,6 +255,11 @@ INSTANCE METHODS
 
       Directory to use for building the executable. If not specified, a
       temporary directory will be created and removed when Perl terminates.
+
+    quiet
+
+      Passed into ExtUtils::CBuilder if you do not provide your own
+      instance. The default is true (unlike ExtUtils::CBuilder itself).
 
  test_ffi
 

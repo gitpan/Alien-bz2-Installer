@@ -4,7 +4,7 @@ use strict;
 use warnings;
 
 # ABSTRACT: Installer for bz2
-our $VERSION = '0.03'; # VERSION
+our $VERSION = '0.04'; # VERSION
 
 sub _catfile {
   my $path = File::Spec->catfile(@_);
@@ -291,7 +291,8 @@ sub test_compile_run
   my($self, %opt) = @_;
   
   delete $self->{error};
-  my $cbuilder = $opt{cbuilder} || do { require ExtUtils::CBuilder; ExtUtils::CBuilder->new(quiet => 1) };
+  $opt{quiet} = 1 unless defined $opt{quiet};
+  my $cbuilder = $opt{cbuilder} || do { require ExtUtils::CBuilder; ExtUtils::CBuilder->new(quiet => $opt{quiet}) };
   
   unless($cbuilder->have_compiler)
   {
@@ -408,7 +409,7 @@ Alien::bz2::Installer - Installer for bz2
 
 =head1 VERSION
 
-version 0.03
+version 0.04
 
 =head1 SYNOPSIS
 
@@ -702,6 +703,12 @@ be created.
 Directory to use for building the executable.
 If not specified, a temporary directory will be
 created and removed when Perl terminates.
+
+=item quiet
+
+Passed into L<ExtUtils::CBuilder> if you do not
+provide your own instance.  The default is true
+(unlike L<ExtUtils::CBuilder> itself).
 
 =back
 
