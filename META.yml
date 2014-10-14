@@ -21,4 +21,4 @@ resources:
   bugtracker: https://github.com/plicease/Alien-bz2-Installer/issues
   homepage: http://perl.wdlabs.com/Alien-bz2-Installer
   repository: git://github.com/plicease/Alien-bz2-Installer.git
-version: '0.04'
+version: '0.05'

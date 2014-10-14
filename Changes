@@ -1,5 +1,8 @@
 Revision history for Alien-bz2-Installer
 
+0.05      2014-10-14 08:55:13 -0400
+  - fix sometimes test failure in system_install.t
+
 0.04      2014-10-08 14:26:42 -0400
   - fixes for Strawberry 5.20
 

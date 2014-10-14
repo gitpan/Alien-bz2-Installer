@@ -4,7 +4,7 @@ use strict;
 use warnings;
 
 # ABSTRACT: Installer for bz2
-our $VERSION = '0.04'; # VERSION
+our $VERSION = '0.05'; # VERSION
 
 sub _catfile {
   my $path = File::Spec->catfile(@_);
@@ -409,7 +409,7 @@ Alien::bz2::Installer - Installer for bz2
 
 =head1 VERSION
 
-version 0.04
+version 0.05
 
 =head1 SYNOPSIS
 
